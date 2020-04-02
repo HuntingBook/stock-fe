@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@import '../node_modules/bootstrap/scss/bootstrap';
+@import 'assets/css/utilities/position';
+@import 'assets/css/utilities/spacing';
+@import 'assets/css/utilities/text';
+@import 'assets/css/reboot';
+@import 'assets/css/navbar';
+@import 'assets/css/forms';
+@import 'assets/css/common';
+@import 'assets/css/floating-labels';
+
+.stock-container{
+    margin-top: 70px;
+}

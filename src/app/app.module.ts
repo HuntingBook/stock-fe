@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,6 +12,9 @@ import { CreateCompanyComponent } from './containers/create-company/create-compa
 import { ComparisonChartsComponent } from './containers/comparison-charts/comparison-charts.component';
 import { UserLoginComponent } from './containers/user-login/user-login.component';
 import { UserSignupComponent } from './containers/user-signup/user-signup.component';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { HeaderComponent } from './widgets/header/header.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +26,15 @@ import { UserSignupComponent } from './containers/user-signup/user-signup.compon
     CreateCompanyComponent,
     ComparisonChartsComponent,
     UserLoginComponent,
-    UserSignupComponent
+    UserSignupComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    TabsModule.forRoot(),
+    BsDropdownModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

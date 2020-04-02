@@ -1,0 +1,14 @@
+<div class="nav-scroller bg-white shadow-sm">
+  <nav class="nav nav-underline">
+    <a class="navbar-brand" href="/">
+      <img class="navbar-logo navbar-logo-light" src="../../assets/images/logo.png" alt="Logo">
+    </a>
+    <a class="nav-link active" [ngClass]="{'active': index + 1 === selected}" [href]="nav.link"
+      *ngFor="let nav of navs; let index = index">{{nav.title}}</a>
+  </nav>
+  <div class="login">
+    <a class="btn btn-sm btn-outline-secondary" href="/login">Logout</a>
+    <!-- <a class="btn btn-sm btn-outline-secondary" href="#">Login</a>
+    <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a> -->
+  </div>
+</div>

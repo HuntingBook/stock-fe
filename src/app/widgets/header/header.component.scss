@@ -1,0 +1,14 @@
+.navbar-logo{
+    width: 120px;
+}
+.nav-scroller {
+    .login{
+        position: absolute;
+        right: 40px;
+        top: 15px;
+        float: right;
+        >a{
+            margin-left: 15px;
+        }
+    }
+}
