@@ -27,11 +27,12 @@ export class HeaderComponent implements OnInit {
     link: "/comparision-charts"
   }];
   selected: number = 1;
+  hasHeader: boolean = false;
   routerSub: Subscription;
   constructor(private router: Router) {
     this.routerSub = this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        this.navs.some((nav, index) => {
+        this.hasHeader = this.navs.some((nav, index) => {
           if (nav.link === event.url) {
             this.selected = index + 1;
             return true;

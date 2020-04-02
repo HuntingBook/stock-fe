@@ -1,1 +1,33 @@
-<p>user-signup works!</p>
+<form class="form-signin">
+  <div class="text-center mb-4">
+    <img class="mb-4 logo" src="../../assets/images/logo.png" alt="Logo">
+    <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
+  </div>
+
+  <div class="form-label-group">
+    <input type="text" id="userName" class="form-control" placeholder="User name" required="" autofocus="">
+    <label for="userName">User name</label>
+  </div>
+
+  <div class="form-label-group">
+    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+    <label for="inputEmail">Email address</label>
+  </div>
+
+  <div class="form-label-group">
+    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+    <label for="inputPassword">Password</label>
+  </div>
+
+  <div class="form-label-group">
+    <input type="password" id="repeatPassword" class="form-control" placeholder="Repeat your password" required="">
+    <label for="repeatPassword">Repeat your password</label>
+  </div>
+
+  <div class="signup mb-3">
+    <small class="text-muted">Already a member? &nbsp;</small>
+    <a class="btn btn-sm btn-secondary" href="/login">Sign in</a>
+  </div>
+
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+</form>

@@ -1,0 +1,23 @@
+.form-signin{
+    .logo{
+        width: 120px;
+        margin-top: 60px;
+    }
+    
+    .btn-sm, .btn-group-sm > .btn {
+        padding: 2px;
+        line-height: 1;
+    }
+    .btn-secondary {
+        color: #fff;
+        background-color: #f941b4;
+        border-color: #f941b4;
+        &:hover{
+            background-color: #e844a6;
+            border-color: #e844a6;
+        }
+    }
+    .signup{
+        float: right;
+    }
+}
