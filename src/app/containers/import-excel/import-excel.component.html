@@ -1,1 +1,18 @@
-<p>import-excel works!</p>
+<div class="container">
+    <h4>Import excel</h4>
+    <form novalidate [formGroup]="formImport">
+        <div class="input-group mb-3">
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" multiple formControlName="importFile" id="importFile"
+                    (change)="onFileChange($event.target.files)">
+                <label class="custom-file-label" #labelImport for="importFile"><i class="fas fa-search"></i>
+                    Select Excel file to be uploaded</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-outline-secondary" type="button" (click)="import()"><i
+                    class="fas fa-file-import"></i> Upload
+            </button>
+        </div>
+    </form>
+</div>
