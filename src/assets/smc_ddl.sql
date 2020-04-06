@@ -45,12 +45,12 @@ CREATE TABLE `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `type` tinyint(4) NOT NULL DEFAULT '1' COMMENT '0:admin|1:normal user',
+  `roles` varchar(10) NOT NULL DEFAULT '1' COMMENT '1:admin|2:normal user',
   `email` varchar(255) DEFAULT NULL,
   `mobile` varchar(255) DEFAULT NULL,
   `confirmed` bit(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8
 
 
 CREATE TABLE `ipo` (

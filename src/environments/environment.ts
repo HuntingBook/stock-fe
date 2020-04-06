@@ -3,8 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  baseHref: '/',
+  HOST: "http://localhost:8082/smc",
+  API_PREFIX: "/api"
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file

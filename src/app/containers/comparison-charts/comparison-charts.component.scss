@@ -1,0 +1,7 @@
+::ng-deep .fusioncharts-container text:text('FusionCharts Trial'){
+    display:none !important;
+}
+
+::ng-deep svg > g[class^="raphael-group-"] > text{
+    display:none !important;
+}

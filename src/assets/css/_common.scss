@@ -4,6 +4,48 @@ body {
   .container{
     margin-top: 30px;
   }
+  .smc-container{
+    background-color: #fff;
+  }
+  .smc-search{
+    margin-top: 20px;
+    margin-bottom: 20px !important;
+    padding-left: 0px;
+    padding-right: 0px;
+    height: 33px;
+    input{
+      height: calc(1.75em + 0.75rem + 2px);
+      font-size: 0.85rem;
+    }
+    >*{
+        border-radius: 0;
+        .input-group-text{
+            border-top-right-radius: 5px !important;
+            border-bottom-right-radius: 5px !important;
+            border-left: none;
+            background-color: #763aef;
+            border-color: #763aef;
+        }
+    }
+  }
+  .table-responsive{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  .smc-table thead th {
+    font-weight: 400;
+    background-color: #773aef;
+    border-top: none;
+    color: #fff;
+    padding: 0.5rem 0.3rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .modal-dialog {
+      max-width: 600px;
+      margin: 1.75rem auto;
+  }
 }
 
 @media (max-width: 991.98px) {

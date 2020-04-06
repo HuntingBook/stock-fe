@@ -13,17 +13,17 @@ export class HeaderComponent implements OnInit {
   navs: any = [{
     title: "Import Data",
     link: "/import-excel"
-  }, {
-    title: "Manage Companies",
+  },  {
+    title: "Manage Company",
     link: "/manage-companies"
   }, {
-    title: "Manage IPO",
+    title: "Manage Stock Exchange",
+    link: "/manage-stock-exchanges"
+  },{
+    title: "Update IPO Details",
     link: "/manage-ipo"
   }, {
-    title: "Manage Stock Exchanges",
-    link: "/manage-stock-exchanges"
-  }, {
-    title: "Comparison Charts",
+    title: "Compare Company",
     link: "/comparision-charts"
   }];
   selected: number = 1;
@@ -32,12 +32,17 @@ export class HeaderComponent implements OnInit {
   constructor(private router: Router) {
     this.routerSub = this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        this.hasHeader = this.navs.some((nav, index) => {
-          if (nav.link === event.url) {
-            this.selected = index + 1;
-            return true;
-          }
-        })
+        if(event.url === "/"){
+          this.selected = 2;
+          this.hasHeader = true;
+        } else {
+          this.hasHeader = this.navs.some((nav, index) => {
+            if (nav.link === event.url) {
+              this.selected = index + 1;
+              return true;
+            }
+          });
+        }
       }
     });
   }
