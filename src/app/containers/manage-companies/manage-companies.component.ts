@@ -1,7 +1,7 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
-import { UserService } from '../../services';
+import { CompanyService } from '../../services';
 
 @Component({
   selector: 'app-manage-companies',
@@ -38,7 +38,7 @@ export class ManageCompaniesComponent implements OnInit {
 
   bsModalRef: BsModalRef;
   slCompany: any;
-  constructor(private modalService: BsModalService, private userService: UserService) {
+  constructor(private modalService: BsModalService, private companyService: CompanyService) {
 
   }
 
@@ -57,9 +57,9 @@ export class ManageCompaniesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.userService.getUsers().subscribe(
-      users => {
-        console.log(users);
+    this.companyService.getCompanies().subscribe(
+      companies => {
+        console.log(companies);
       },
       error => {
         console.log(error);

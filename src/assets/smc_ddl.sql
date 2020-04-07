@@ -22,7 +22,7 @@ CREATE TABLE `company` (
   `turnover` varchar(255) DEFAULT NULL,
   `ceo` varchar(255) DEFAULT NULL,
   `boardOfDirectors` varchar(255) DEFAULT NULL,
-  `stockExchanges` varchar(255) DEFAULT NULL,
+  `stockExchangeIds` varchar(255) DEFAULT NULL,
   `sectorId` int(11) NOT NULL,
   `writeup` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
