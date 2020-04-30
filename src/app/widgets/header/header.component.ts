@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
@@ -9,14 +9,23 @@ import { filter } from 'rxjs/operators';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  @Input() navs:any;
+
   selected: number = 1;
   hasHeader: boolean = false;
   routerSub: Subscription;
+
+  @Input() navs: any;
+
+  @Output() logout: EventEmitter<any> = new EventEmitter<any>();
+
+  onLogout() {
+    this.logout.emit();
+  }
+
   constructor(private router: Router) {
     this.routerSub = this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        if(event.url === "/"){
+        if (event.url === "/") {
           this.selected = 2;
           this.hasHeader = true;
         } else {

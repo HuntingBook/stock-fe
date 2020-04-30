@@ -1,4 +1,4 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
 import { CompanyService } from '../../services';
@@ -38,12 +38,11 @@ export class ManageCompaniesComponent implements OnInit {
 
   bsModalRef: BsModalRef;
   slCompany: any;
-  constructor(private modalService: BsModalService, private companyService: CompanyService) {
 
-  }
+  @ViewChild('template', { static: true }) template: TemplateRef<any>;
 
-  openModal(template: TemplateRef<any>, slCompany:any) {
-    // this.slCompany = slCompany;
+  openModal(slCompany: any) {
+    this.slCompany = slCompany;
     this.slCompany = {
       name: "",
       turnover: "",
@@ -53,8 +52,10 @@ export class ManageCompaniesComponent implements OnInit {
       sector: "",
       writeup: ""
     };
-    this.bsModalRef = this.modalService.show(template, { class: 'modal-dialog-centered', backdrop: "static" });
+    this.bsModalRef = this.modalService.show(this.template, { class: 'modal-dialog-centered', backdrop: "static" });
   }
+  
+  constructor(private modalService: BsModalService, private companyService: CompanyService) { }
 
   ngOnInit() {
     this.companyService.getCompanies().subscribe(
@@ -66,7 +67,7 @@ export class ManageCompaniesComponent implements OnInit {
       });
   }
 
-  update(){
+  update() {
   }
 
 }
