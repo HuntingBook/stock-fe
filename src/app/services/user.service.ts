@@ -11,6 +11,10 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
+  login(username: string, password: string): Observable<any> {
+    return this.http.post<any>(`${environment.HOST}/auth/login`, { username, password }, { observe: 'response' });
+  }
+
   getUsers(): Observable<any> {
     return this.http.get<any>(`${API_ENDPOINT}/users`);
   }

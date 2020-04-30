@@ -27,14 +27,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1,001</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td>dolor</td>
+                    <tr *ngFor="let ipo of ipos">
+                        <td>{{ipo.company.name}}</td>
+                        <td>{{ipo.stockExchange.name}}</td>
+                        <td>{{ipo.price}}</td>
+                        <td>{{ipo.openTime | date: 'dd/MM/yyyy' }}</td>
                         <td><small><a (click)="openModal(template)">Edit</a></small></td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <td>1,002</td>
                         <td>amet</td>
                         <td>consectetur</td>
@@ -138,7 +138,7 @@
                         <td>ligula</td>
                         <td>in</td>
                         <td>libero</td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
         </div>

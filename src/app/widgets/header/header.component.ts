@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
@@ -9,23 +9,7 @@ import { filter } from 'rxjs/operators';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
-  navs: any = [{
-    title: "Import Data",
-    link: "/import-excel"
-  },  {
-    title: "Manage Company",
-    link: "/manage-companies"
-  }, {
-    title: "Manage Stock Exchange",
-    link: "/manage-stock-exchanges"
-  },{
-    title: "Update IPO Details",
-    link: "/manage-ipo"
-  }, {
-    title: "Compare Company",
-    link: "/comparision-charts"
-  }];
+  @Input() navs:any;
   selected: number = 1;
   hasHeader: boolean = false;
   routerSub: Subscription;

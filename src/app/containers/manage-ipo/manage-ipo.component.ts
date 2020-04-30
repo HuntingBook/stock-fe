@@ -1,5 +1,6 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { IPOService } from '../../services';
 
 @Component({
   selector: 'app-manage-ipo',
@@ -34,9 +35,10 @@ export class ManageIPOComponent implements OnInit {
     }
   ];
 
+  ipos: any;
   bsModalRef: BsModalRef;
   slIPO: any;
-  constructor(private modalService: BsModalService) {
+  constructor(private modalService: BsModalService, private ipoService: IPOService) {
 
   }
 
@@ -54,7 +56,17 @@ export class ManageIPOComponent implements OnInit {
     this.bsModalRef = this.modalService.show(template, { class: 'modal-dialog-centered', backdrop: "static" });
   }
 
+  
+
   ngOnInit() {
+    this.ipoService.getIPOs().subscribe(
+      ipos => {
+        this.ipos = ipos;
+        console.log(ipos);
+      },
+      error => {
+        console.log(error);
+      });
   }
 
 }
