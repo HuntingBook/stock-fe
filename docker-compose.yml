@@ -1,0 +1,10 @@
+version: "1.0.0"
+services:
+  stock-fe:
+    restart: always
+    image: ${STOCK_FE_IMAGE}
+    container_name: stock-fe_nginx
+    volumes:
+      - ./stock-fe.conf:/etc/nginx/conf.d/default.conf:ro
+    ports:
+      - "80:80"
